@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito | Tienda Sara</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <i class="bi bi-bag-heart-fill text-primary"></i> Tienda Sara
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="galeria.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link active" href="carrito.html">Carrito</a></li>
+          </ul>
+          <form class="d-flex me-lg-3 my-2 my-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
+            <button class="btn btn-outline-primary" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+          </form>
+          <a href="carrito.html" class="btn btn-primary"><i class="bi bi-cart3"></i> Carrito</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="mb-4">Carrito de compra</h1>
+
+    <div class="row g-4">
+      <!-- Productos -->
+      <section class="col-lg-8">
+        <div class="card">
+          <div class="card-body" id="listaCarrito">
+            <div class="item d-flex flex-wrap align-items-center gap-3 border-bottom py-3" data-precio="4299">
+              <div class="miniatura"><i class="bi bi-phone"></i></div>
+              <div class="flex-grow-1">
+                <h6 class="mb-0">Smartphone 128 GB</h6>
+                <small class="text-muted">Motorola</small><br>
+                <small>Precio unitario: $4,299</small>
+              </div>
+              <input type="number" class="form-control cantidad" min="1" max="99" value="1" aria-label="Cantidad de Smartphone 128 GB">
+              <div class="text-end" style="min-width:100px">
+                <small class="text-muted d-block">Subtotal</small>
+                <strong class="subtotal">$4,299</strong>
+              </div>
+              <button type="button" class="btn btn-outline-danger btn-sm eliminar" aria-label="Eliminar Smartphone 128 GB">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+            <div class="item d-flex flex-wrap align-items-center gap-3 border-bottom py-3" data-precio="1799">
+              <div class="miniatura"><i class="bi bi-lightning-charge"></i></div>
+              <div class="flex-grow-1">
+                <h6 class="mb-0">Tenis deportivos</h6>
+                <small class="text-muted">Nike</small><br>
+                <small>Precio unitario: $1,799</small>
+              </div>
+              <input type="number" class="form-control cantidad" min="1" max="99" value="2" aria-label="Cantidad de Tenis deportivos">
+              <div class="text-end" style="min-width:100px">
+                <small class="text-muted d-block">Subtotal</small>
+                <strong class="subtotal">$3,598</strong>
+              </div>
+              <button type="button" class="btn btn-outline-danger btn-sm eliminar" aria-label="Eliminar Tenis deportivos">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+            <div class="item d-flex flex-wrap align-items-center gap-3 border-bottom py-3" data-precio="1299">
+              <div class="miniatura"><i class="bi bi-headphones"></i></div>
+              <div class="flex-grow-1">
+                <h6 class="mb-0">Audífonos Bluetooth</h6>
+                <small class="text-muted">Sony</small><br>
+                <small>Precio unitario: $1,299</small>
+              </div>
+              <input type="number" class="form-control cantidad" min="1" max="99" value="1" aria-label="Cantidad de Audífonos Bluetooth">
+              <div class="text-end" style="min-width:100px">
+                <small class="text-muted d-block">Subtotal</small>
+                <strong class="subtotal">$1,299</strong>
+              </div>
+              <button type="button" class="btn btn-outline-danger btn-sm eliminar" aria-label="Eliminar Audífonos Bluetooth">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+            <div id="carritoVacio" class="text-center py-4 d-none">
+              <i class="bi bi-cart-x fs-1 text-muted"></i>
+              <p class="mb-2">Tu carrito está vacío.</p>
+              <a href="galeria.html" class="btn btn-primary">Ver productos</a>
+            </div>
+          </div>
+        </div>
+        <a href="galeria.html" class="btn btn-outline-secondary mt-3"><i class="bi bi-arrow-left"></i> Seguir comprando</a>
+      </section>
+
+      <!-- Resumen -->
+      <aside class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="mb-3">Resumen del pedido</h5>
+            <div class="d-flex justify-content-between"><span>Subtotal</span><span id="resSubtotal">$0.00</span></div>
+            <div class="d-flex justify-content-between text-success"><span>Descuento</span><span id="resDescuento">-$0.00</span></div>
+            <div class="d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span id="resIva">$0.00</span></div>
+            <div class="d-flex justify-content-between"><span>Envío</span><span id="resEnvio">Gratis</span></div>
+            <hr>
+            <div class="d-flex justify-content-between fs-5 fw-bold"><span>Total</span><span id="resTotal">$0.00</span></div>
+            <a href="#" id="btnPago" class="btn btn-success w-100 mt-3">Proceder al pago</a>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6>Opciones de envío</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="envio" id="envio1" value="0" checked>
+              <label class="form-check-label" for="envio1">Recoger en tienda (gratis)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="envio" id="envio2" value="99">
+              <label class="form-check-label" for="envio2">Estándar, 3 a 5 días ($99)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="envio" id="envio3" value="199">
+              <label class="form-check-label" for="envio3">Express, 1 a 2 días ($199)</label>
+            </div>
+
+            <form id="formCP" class="d-flex gap-2 mt-3">
+              <input type="text" id="cp" class="form-control" placeholder="Código postal" maxlength="5" inputmode="numeric" aria-label="Código postal">
+              <button class="btn btn-outline-primary" type="submit">Calcular</button>
+            </form>
+            <p id="msgCP" class="small mt-2"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h6>Cupón de descuento</h6>
+            <form id="formCupon" class="d-flex gap-2">
+              <input type="text" id="cupon" class="form-control" placeholder="Ej. SARA10" aria-label="Cupón">
+              <button class="btn btn-outline-primary" type="submit">Aplicar</button>
+            </form>
+            <p id="msgCupon" class="small mt-2"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5><i class="bi bi-bag-heart-fill"></i> Tienda Sara</h5>
+          <p class="text-secondary">Todo para tu hogar y tu familia en un solo lugar: muebles, electrónica, ropa y más.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-secondary" href="index.html">Inicio</a></li>
+            <li><a class="text-secondary" href="galeria.html">Productos</a></li>
+            <li><a class="text-secondary" href="carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h6>Contacto</h6>
+          <ul class="list-unstyled text-secondary">
+            <li><i class="bi bi-envelope"></i> contacto@tiendasara.com</li>
+            <li><i class="bi bi-telephone"></i> 000 000 0000</li>
+            <li><i class="bi bi-geo-alt"></i> Tu dirección aquí</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Síguenos</h6>
+          <a class="text-light fs-4 me-3" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="text-light fs-4 me-3" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="text-light fs-4" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="text-center text-secondary small mb-0">&copy; 2026 Tienda Sara. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Cálculos del carrito (solo en el navegador)
+    const IVA = 0.16;
+    let descuento = 0; // porcentaje del cupón
+
+    const dinero = n => '$' + n.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    function recalcular() {
+      let subtotal = 0;
+      const items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        const precio = Number(item.dataset.precio);
+        const cant = Math.max(1, Number(item.querySelector('.cantidad').value) || 1);
+        const sub = precio * cant;
+        item.querySelector('.subtotal').textContent = dinero(sub);
+        subtotal += sub;
+      });
+
+      const desc = subtotal * descuento;
+      const impuestos = (subtotal - desc) * IVA;
+      const envio = items.length ? Number(document.querySelector('input[name="envio"]:checked').value) : 0;
+      const total = subtotal - desc + impuestos + envio;
+
+      document.getElementById('resSubtotal').textContent = dinero(subtotal);
+      document.getElementById('resDescuento').textContent = '-' + dinero(desc);
+      document.getElementById('resIva').textContent = dinero(impuestos);
+      document.getElementById('resEnvio').textContent = envio === 0 ? 'Gratis' : dinero(envio);
+      document.getElementById('resTotal').textContent = dinero(total);
+
+      document.getElementById('carritoVacio').classList.toggle('d-none', items.length > 0);
+      document.getElementById('btnPago').classList.toggle('disabled', items.length === 0);
+    }
+
+    document.addEventListener('input', e => { if (e.target.classList.contains('cantidad')) recalcular(); });
+    document.addEventListener('change', e => { if (e.target.name === 'envio') recalcular(); });
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.eliminar');
+      if (btn) { btn.closest('.item').remove(); recalcular(); }
+    });
+
+    // Cupón: usa SARA10 para 10% de descuento
+    document.getElementById('formCupon').addEventListener('submit', e => {
+      e.preventDefault();
+      const codigo = document.getElementById('cupon').value.trim().toUpperCase();
+      const msg = document.getElementById('msgCupon');
+      if (codigo === 'SARA10') {
+        descuento = 0.10;
+        msg.className = 'small mt-2 text-success';
+        msg.textContent = 'Cupón aplicado: 10% de descuento.';
+      } else {
+        descuento = 0;
+        msg.className = 'small mt-2 text-danger';
+        msg.textContent = 'El cupón no es válido.';
+      }
+      recalcular();
+    });
+
+    // Calculadora de envío por código postal (simulada)
+    document.getElementById('formCP').addEventListener('submit', e => {
+      e.preventDefault();
+      const cp = document.getElementById('cp').value.trim();
+      const msg = document.getElementById('msgCP');
+      if (/^\d{5}$/.test(cp)) {
+        msg.className = 'small mt-2 text-success';
+        msg.textContent = 'Envío estándar a ' + cp + ': 3 a 5 días hábiles. Express: 1 a 2 días.';
+      } else {
+        msg.className = 'small mt-2 text-danger';
+        msg.textContent = 'Escribe un código postal de 5 dígitos.';
+      }
+    });
+
+    recalcular();
+  </script>
+</body>
+</html>
