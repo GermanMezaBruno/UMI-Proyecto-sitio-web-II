@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | Tienda Sara</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <i class="bi bi-bag-heart-fill text-primary"></i> Tienda Sara
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="galeria.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+          </ul>
+          <form class="d-flex me-lg-3 my-2 my-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
+            <button class="btn btn-outline-primary" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+          </form>
+          <a href="carrito.html" class="btn btn-primary"><i class="bi bi-cart3"></i> Carrito</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="mb-1">Productos</h1>
+    <p class="text-muted mb-4">Encuentra lo que necesitas para tu hogar y tu familia.</p>
+
+    <div class="row g-4">
+      <!-- Filtros -->
+      <aside class="col-lg-3">
+        <button class="btn btn-outline-secondary w-100 d-lg-none mb-3" type="button"
+                data-bs-toggle="collapse" data-bs-target="#filtros" aria-expanded="false" aria-controls="filtros">
+          <i class="bi bi-funnel"></i> Filtros
+        </button>
+        <div class="collapse d-lg-block" id="filtros">
+          <div class="card card-body">
+            <h5 class="mb-3">Filtros</h5>
+
+            <h6>Categoría</h6>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Calzado" id="cat-0">
+            <label class="form-check-label" for="cat-0">Calzado</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Celulares" id="cat-1">
+            <label class="form-check-label" for="cat-1">Celulares</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Deportes" id="cat-2">
+            <label class="form-check-label" for="cat-2">Deportes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Electrodomésticos" id="cat-3">
+            <label class="form-check-label" for="cat-3">Electrodomésticos</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Electrónica" id="cat-4">
+            <label class="form-check-label" for="cat-4">Electrónica</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Muebles" id="cat-5">
+            <label class="form-check-label" for="cat-5">Muebles</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-cat" type="checkbox" value="Ropa" id="cat-6">
+            <label class="form-check-label" for="cat-6">Ropa</label>
+          </div>
+
+            <h6 class="mt-3">Marca</h6>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Benotto" id="marca-0">
+            <label class="form-check-label" for="marca-0">Benotto</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Casa Fina" id="marca-1">
+            <label class="form-check-label" for="marca-1">Casa Fina</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="HP" id="marca-2">
+            <label class="form-check-label" for="marca-2">HP</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="LG" id="marca-3">
+            <label class="form-check-label" for="marca-3">LG</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Mabe" id="marca-4">
+            <label class="form-check-label" for="marca-4">Mabe</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Motorola" id="marca-5">
+            <label class="form-check-label" for="marca-5">Motorola</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Nike" id="marca-6">
+            <label class="form-check-label" for="marca-6">Nike</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Samsung" id="marca-7">
+            <label class="form-check-label" for="marca-7">Samsung</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Sara Moda" id="marca-8">
+            <label class="form-check-label" for="marca-8">Sara Moda</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Sony" id="marca-9">
+            <label class="form-check-label" for="marca-9">Sony</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filtro-marca" type="checkbox" value="Spring Air" id="marca-10">
+            <label class="form-check-label" for="marca-10">Spring Air</label>
+          </div>
+
+            <h6 class="mt-3">Precio máximo: <span id="precioMax">$12,500</span></h6>
+            <input type="range" class="form-range" id="rangoPrecio" min="500" max="12500" step="500" value="12500">
+
+            <button class="btn btn-outline-secondary btn-sm mt-3" id="limpiar" type="button">Limpiar filtros</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Listado -->
+      <section class="col-lg-9">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <span id="contador" class="text-muted">12 productos</span>
+          <div class="d-flex align-items-center gap-2">
+            <label for="orden" class="form-label mb-0 text-nowrap">Ordenar por</label>
+            <select id="orden" class="form-select">
+              <option value="relevancia">Relevancia</option>
+              <option value="menor">Precio: de menor a mayor</option>
+              <option value="mayor">Precio: de mayor a menor</option>
+              <option value="nombre">Nombre (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row g-4" id="lista">
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Electrónica" data-marca="Samsung" data-precio="8999" data-nombre="Smart TV 55"">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-danger">Descuento</span><i class="bi bi-tv"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Electrónica · Samsung</small>
+              <h5 class="card-title mt-1">Smart TV 55"</h5>
+              <p class="card-text text-muted mb-2">4K con apps de streaming.</p>
+              <p class="fw-bold fs-5 mb-0">$8,999<span class="precio-anterior ms-2">$10,999</span></p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Muebles" data-marca="Casa Fina" data-precio="12499" data-nombre="Sala modular 3 piezas">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-success">Nuevo</span><i class="bi bi-house-heart"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Muebles · Casa Fina</small>
+              <h5 class="card-title mt-1">Sala modular 3 piezas</h5>
+              <p class="card-text text-muted mb-2">Tela suave, color gris.</p>
+              <p class="fw-bold fs-5 mb-0">$12,499</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Electrodomésticos" data-marca="Mabe" data-precio="11299" data-nombre="Refrigerador 14 pies">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-warning text-dark">Popular</span><i class="bi bi-snow"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Electrodomésticos · Mabe</small>
+              <h5 class="card-title mt-1">Refrigerador 14 pies</h5>
+              <p class="card-text text-muted mb-2">Ahorro de energía.</p>
+              <p class="fw-bold fs-5 mb-0">$11,299</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Celulares" data-marca="Motorola" data-precio="4299" data-nombre="Smartphone 128 GB">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-danger">Descuento</span><i class="bi bi-phone"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Celulares · Motorola</small>
+              <h5 class="card-title mt-1">Smartphone 128 GB</h5>
+              <p class="card-text text-muted mb-2">Cámara de 50 MP.</p>
+              <p class="fw-bold fs-5 mb-0">$4,299<span class="precio-anterior ms-2">$4,999</span></p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Calzado" data-marca="Nike" data-precio="1799" data-nombre="Tenis deportivos">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-success">Nuevo</span><i class="bi bi-lightning-charge"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Calzado · Nike</small>
+              <h5 class="card-title mt-1">Tenis deportivos</h5>
+              <p class="card-text text-muted mb-2">Ligeros y cómodos.</p>
+              <p class="fw-bold fs-5 mb-0">$1,799</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Muebles" data-marca="Spring Air" data-precio="5999" data-nombre="Colchón matrimonial">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-warning text-dark">Popular</span><i class="bi bi-moon-stars"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Muebles · Spring Air</small>
+              <h5 class="card-title mt-1">Colchón matrimonial</h5>
+              <p class="card-text text-muted mb-2">Espuma de alta densidad.</p>
+              <p class="fw-bold fs-5 mb-0">$5,999</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Electrónica" data-marca="HP" data-precio="9499" data-nombre="Laptop 15.6"">
+          <div class="card h-100">
+            <div class="producto-img"><i class="bi bi-laptop"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Electrónica · HP</small>
+              <h5 class="card-title mt-1">Laptop 15.6"</h5>
+              <p class="card-text text-muted mb-2">8 GB RAM, 256 GB SSD.</p>
+              <p class="fw-bold fs-5 mb-0">$9,499</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Electrodomésticos" data-marca="LG" data-precio="9799" data-nombre="Lavadora 20 kg">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-danger">Descuento</span><i class="bi bi-basket"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Electrodomésticos · LG</small>
+              <h5 class="card-title mt-1">Lavadora 20 kg</h5>
+              <p class="card-text text-muted mb-2">Carga superior.</p>
+              <p class="fw-bold fs-5 mb-0">$9,799<span class="precio-anterior ms-2">$11,299</span></p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Ropa" data-marca="Sara Moda" data-precio="599" data-nombre="Vestido casual">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-success">Nuevo</span><i class="bi bi-bag-heart"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Ropa · Sara Moda</small>
+              <h5 class="card-title mt-1">Vestido casual</h5>
+              <p class="card-text text-muted mb-2">Disponible en varias tallas.</p>
+              <p class="fw-bold fs-5 mb-0">$599</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Muebles" data-marca="Casa Fina" data-precio="8999" data-nombre="Comedor 6 sillas">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-warning text-dark">Popular</span><i class="bi bi-grid-3x3-gap"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Muebles · Casa Fina</small>
+              <h5 class="card-title mt-1">Comedor 6 sillas</h5>
+              <p class="card-text text-muted mb-2">Madera resistente.</p>
+              <p class="fw-bold fs-5 mb-0">$8,999</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Electrónica" data-marca="Sony" data-precio="1299" data-nombre="Audífonos Bluetooth">
+          <div class="card h-100">
+            <div class="producto-img"><i class="bi bi-headphones"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Electrónica · Sony</small>
+              <h5 class="card-title mt-1">Audífonos Bluetooth</h5>
+              <p class="card-text text-muted mb-2">Cancelación de ruido.</p>
+              <p class="fw-bold fs-5 mb-0">$1,299</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 producto" data-cat="Deportes" data-marca="Benotto" data-precio="3499" data-nombre="Bicicleta de montaña">
+          <div class="card h-100">
+            <div class="producto-img"><span class="badge bg-danger">Descuento</span><i class="bi bi-bicycle"></i></div>
+            <div class="card-body">
+              <small class="text-muted">Deportes · Benotto</small>
+              <h5 class="card-title mt-1">Bicicleta de montaña</h5>
+              <p class="card-text text-muted mb-2">21 velocidades.</p>
+              <p class="fw-bold fs-5 mb-0">$3,499<span class="precio-anterior ms-2">$3,999</span></p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3 d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary flex-fill">Ver más</a>
+              <a href="carrito.html" class="btn btn-primary flex-fill">Agregar</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div id="sinResultados" class="alert alert-warning mt-3 d-none">
+          No hay productos con esos filtros. Prueba quitando alguno.
+        </div>
+
+        <!-- Paginación (visual) -->
+        <nav class="mt-5" aria-label="Paginación de productos">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5><i class="bi bi-bag-heart-fill"></i> Tienda Sara</h5>
+          <p class="text-secondary">Todo para tu hogar y tu familia en un solo lugar: muebles, electrónica, ropa y más.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-secondary" href="index.html">Inicio</a></li>
+            <li><a class="text-secondary" href="galeria.html">Productos</a></li>
+            <li><a class="text-secondary" href="carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h6>Contacto</h6>
+          <ul class="list-unstyled text-secondary">
+            <li><i class="bi bi-envelope"></i> contacto@tiendasara.com</li>
+            <li><i class="bi bi-telephone"></i> 000 000 0000</li>
+            <li><i class="bi bi-geo-alt"></i> Tu dirección aquí</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Síguenos</h6>
+          <a class="text-light fs-4 me-3" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="text-light fs-4 me-3" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="text-light fs-4" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="text-center text-secondary small mb-0">&copy; 2026 Tienda Sara. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filtros y orden de la galería (solo en el navegador, sin base de datos)
+    const lista = document.getElementById('lista');
+    const productos = Array.from(lista.querySelectorAll('.producto'));
+    const rango = document.getElementById('rangoPrecio');
+    const etiquetaPrecio = document.getElementById('precioMax');
+    const orden = document.getElementById('orden');
+    const contador = document.getElementById('contador');
+
+    const marcados = clase => Array.from(document.querySelectorAll(clase + ':checked')).map(c => c.value);
+
+    function aplicar() {
+      const cats = marcados('.filtro-cat');
+      const marcas = marcados('.filtro-marca');
+      const max = Number(rango.value);
+      etiquetaPrecio.textContent = '$' + max.toLocaleString('es-MX');
+
+      let visibles = 0;
+      productos.forEach(p => {
+        const ok = (cats.length === 0 || cats.includes(p.dataset.cat)) &&
+                   (marcas.length === 0 || marcas.includes(p.dataset.marca)) &&
+                   Number(p.dataset.precio) <= max;
+        p.classList.toggle('d-none', !ok);
+        if (ok) visibles++;
+      });
+      contador.textContent = visibles + ' productos';
+      document.getElementById('sinResultados').classList.toggle('d-none', visibles > 0);
+    }
+
+    function ordenar() {
+      const v = orden.value;
+      const copia = [...productos];
+      if (v === 'menor') copia.sort((a, b) => a.dataset.precio - b.dataset.precio);
+      if (v === 'mayor') copia.sort((a, b) => b.dataset.precio - a.dataset.precio);
+      if (v === 'nombre') copia.sort((a, b) => a.dataset.nombre.localeCompare(b.dataset.nombre));
+      if (v === 'relevancia') copia.sort((a, b) => productos.indexOf(a) - productos.indexOf(b));
+      copia.forEach(p => lista.appendChild(p));
+    }
+
+    document.querySelectorAll('.filtro-cat, .filtro-marca').forEach(c => c.addEventListener('change', aplicar));
+    rango.addEventListener('input', aplicar);
+    orden.addEventListener('change', ordenar);
+    document.getElementById('limpiar').addEventListener('click', () => {
+      document.querySelectorAll('.filtro-cat, .filtro-marca').forEach(c => c.checked = false);
+      rango.value = rango.max;
+      aplicar();
+    });
+    aplicar();
+  </script>
+</body>
+</html>
